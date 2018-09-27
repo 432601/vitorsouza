@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        Qual seu nível de conversa? <input id="conversa"><br><br>
+        Quantos livros já leu? <input id="livro"><br><br>
+        Quantos jogos de celular, playstation ou xbox já jogou? <input id="jogos"><br><br>
+        Quantos namorados(as) ou ficantes já teve? <input id="namorados"><br><br>
+        <br><br>
+        <button onclick="analisar()">Analisar Perfil</button>
+        <br><br>
+
+        <u>Boa de conversa?</u> <span id="sim_não1" ></span><br><br>
+
+        <u>Culta?</u><span id="sim_não2" ></span><br><br>
+
+        <U>Curte um videogame?</U> <span id="sim_não3" ></span><br><br>
+
+        <U>Difícil de conquistar?</U> <span id="sim_não4" ></span><br><br>
+
+        <U>Boa de conversa e culta?</U><span id="sim_não5" ></span><br><br>
+
+        <U>Boa de conversa e curte um videogame?</U> <span id="sim_não6" ></span><br><br>
+
+        <U>Não é culta e ainda é difícil (tá dificil pra essa pessoa, hein)?</U><span id="sim_não7" ></span><br><br>
+
+        <b>Veredito:</b> Para eu marcar um encontro deve ser boa de conversa, culta mas não difícil de conquistar ou difícil de conquistar e curtir um videogame. É o caso? <span id="sim_não8" ></span><br><br>
+
+
+</body>
+</html>
+<script>
+    function analisar(){
+        var conversa = Number(document.getElementById("conversa").value);
+        
+        
+        var livro = Number(document.getElementById("livro").value);
+
+        var jogos = Number(document.getElementById("jogos").value);
+
+        var namorados = Number(document.getElementById("namorados").value);
+
+    if(conversa <0 || conversa >10 || livro <0 || jogos <0 || namorados <0){
+        alert("Valor inválido");
+    }
+   
+
+    if(conversa >=6){
+        document.getElementById("sim_não1").innerHTML = "SIM";
+
+    }else{
+        document.getElementById("sim_não1").innerHTML = "NÃO";
+    }
+
+    if(livro >10){
+        document.getElementById("sim_não2").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não2").innerHTML = "NÃO";
+    }
+
+    if(jogos >10){
+        document.getElementById("sim_não3").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não3").innerHTML = "NÃO";
+    }
+
+    if(namorados <3){
+        document.getElementById("sim_não4").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não4").innerHTML = "NÃO";
+    }
+    if(conversa >=6 && livro >10){
+        document.getElementById("sim_não5").innerHTML = "SIM";
+
+    }else {
+        document.getElementById("sim_não5").innerHTML = "NÃO";
+    }
+
+
+    if(conversa >=6 && jogos >=10){
+        document.getElementById("sim_não6").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não6").innerHTML = "NÃO";
+        
+    }
+
+if(livro <0 && namorados <3){
+        document.getElementById("sim_não7").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não7").innerHTML = "NÃO";
+    }
+
+
+    if(conversa >=6 && livro >=10 || namorados >=3 || namorados <3 && jogos >=10){
+            document.getElementById("sim_não8").innerHTML = "SIM";
+    }else{
+        document.getElementById("sim_não8").innerHTML = "NÃO";
+    }
+</script>
